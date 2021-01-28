@@ -11,7 +11,7 @@ GPU_IDX2CONTAINER_ID = {0: '96ed8d37252b', 1: '9f16c2ad98bd'}
 
 
 def get_average_hr(container_id):
-    output = subprocess.check_output(f'docker logs {container_id} | grep Total | tail -4', shell=True)
+    output = subprocess.check_output(f'docker logs {container_id} | grep Total | tail -3', shell=True)
     hrs = []
     for line in output.decode('utf-8').splitlines():
         hrs.append(float(line.split()[5]))
