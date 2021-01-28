@@ -1,5 +1,5 @@
 # mining-ubuntu-RTX3000s
-In this repo I am trying to summarize how to successfully mine ETH (and possibly other coins) under Ubuntu 18.04. I like to do all of this stuff myself, not relying on some existing mining operating systems, but I am not saying, that they are bad, this is just a preffered option for me.
+In this repo I am trying to summarize how to successfully mine ETH (and possibly other coins) under Ubuntu 18.04 using RTX 3000 series cards - I own only 3090s so far. I like to do all of this stuff myself, not relying on some existing mining operating systems, but I am not saying, that they are bad, this is just a preffered option for me.
 
 ## Installation
 Install ubuntu server, I am using 18.04 but I would expect others to work as well.
