@@ -11,7 +11,7 @@ GPU_IDX2CONTAINER_ID = {0: '96ed8d37252b', 1: '9f16c2ad98bd'}
 
 
 def get_average_hr(container_id):
-    output = subprocess.check_output(f'docker logs {container_id} | grep Total | tail', shell=True)
+    output = subprocess.check_output(f'docker logs {container_id} | grep Total | tail -4', shell=True)
     hrs = []
     for line in output.decode('utf-8').splitlines():
         hrs.append(float(line.split()[5]))
@@ -22,7 +22,7 @@ def get_average_power_draw(gpu_idx):
     for i in range(10):
         output = subprocess.check_output(f'nvidia-smi -i {gpu_idx} --format=csv --query-gpu=power.draw', shell=True)
         draws.append(float(output.decode('utf-8').split()[2]))
-        time.sleep(0.5)
+        time.sleep(0.2)
     return np.mean(draws)
 
 
@@ -36,11 +36,11 @@ if __name__ == '__main__':
     with open('eggs.csv', 'w', newline='') as csvfile:
         csv_writer = csv.writer(csvfile, delimiter='\t')
         for pl in range(350, 260, -10):
-            for clock_offset in range(-500, 500, 50):
+            for clock_offset in range(-500, 100, 50):
                 for mem_offset in range(-200, 1500, 100):
                     for gpu_idx in sorted(GPU_IDX2CONTAINER_ID):
                         set_params(gpu_idx, pl, clock_offset, mem_offset)
-                    time.sleep(200)
+                    time.sleep(65)
                     for gpu_idx in sorted(GPU_IDX2CONTAINER_ID):
                         power_draw = get_average_power_draw(gpu_idx)
                         hr = get_average_hr(GPU_IDX2CONTAINER_ID[gpu_idx])
