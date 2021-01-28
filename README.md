@@ -36,6 +36,6 @@ Increase (or usually decrease) GPU 0 core clock by 100 (note \[4\] just before =
 nvidia-settings -a '[gpu:{gpu_idx}]/GPUGraphicsClockOffset[4]=-100'
 ```
 
-Eventually, you can use this [automated script]() to tune your parameters automatically.
+Eventually, you can use this [automated script](https://github.com/Jamiroquai88/mining-ubuntu-RTX3000s/blob/main/tune_hr.py) to tune your parameters automatically. It iterates over possible values and computes hashrate/watt ratio, then the user can pick desired settings. It is optimized for RTX 3090, please do not use it blindly, but try to understand what it is doing. 
 
 
