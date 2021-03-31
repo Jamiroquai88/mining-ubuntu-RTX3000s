@@ -6,7 +6,7 @@ Install ubuntu server, I am using 18.04 but I would expect others to work as wel
 This setup is focused on [vast.ai](www.vast.ai) hosting, but might be easily adapted also to other setups.
 
 ## Steps
-1.  Follow [this tutorial](https://gist.github.com/streslab/c51e09ca0e44c79910a4bd26b924eccd) up to overclocking step.
+1.  Follow [this tutorial](https://gist.github.com/Jamiroquai88/6bb415727d9de9a62e6b9994f9313cfa) up to overclocking step.
 2.  Do the same as in the repo above with a few modification
 
 Start an X server and push it into the background:
